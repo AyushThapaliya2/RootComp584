@@ -1,11 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { WeatherData } from '../weather-data';
 
 @Component({
   selector: 'app-weather',
   imports: [],
   templateUrl: './weather.html',
-  styleUrl: './weather.css'
+  styleUrl: './weather.scss'
 })
 export class Weather {
-
+  constructor(http: HttpClient) {
+    http.get<WeatherData[]>('http://localhost:5262/weatherforecast').subscribe(result => {
+    
+    });
+  }
 }
