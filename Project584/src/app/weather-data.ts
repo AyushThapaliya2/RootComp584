@@ -1,6 +1,6 @@
 export interface WeatherData {
-    Date: string,
-    TemperatureC: number,
-    TemperatureF: number,
-    Summary: string
+    date: string,
+    temperatureC: number,
+    temperatureF: number,
+    summary: string
 }
