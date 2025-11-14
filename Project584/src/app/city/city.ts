@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-city',
   imports: [],
   templateUrl: './city.html',
-  styleUrl: './city.css'
+  styleUrl: './city.scss',
 })
-export class City {
-
-}
+export class City {}
