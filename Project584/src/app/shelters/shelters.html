@@ -1,0 +1,69 @@
+<section class="shelters">
+  <h1>Emergency Shelters</h1>
+  @if (shelters.length > 0) {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Capacity</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (shelter of shelters; track $index) {
+            <tr>
+              <td>{{ shelter.name }}</td>
+              <td>{{ shelter.latitude }}</td>
+              <td>{{ shelter.longitude }}</td>
+              <td>{{ shelter.capacity }}</td>
+              <td>{{ shelter.isOpen ? 'Open' : 'Closed' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p>Loading shelters…</p>
+  }
+</section>
+
+<section class="nearby">
+  <h2>Find Nearest Shelters</h2>
+  <div class="coords">
+    <label>
+      Latitude
+      <input type="number" [value]="lat" (input)="updateCoordinates($any($event.target).valueAsNumber, lng)" step="0.0001" />
+    </label>
+    <label>
+      Longitude
+      <input type="number" [value]="lng" (input)="updateCoordinates(lat, $any($event.target).valueAsNumber)" step="0.0001" />
+    </label>
+  </div>
+  @if (nearby.length > 0) {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Distance (km)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (shelter of nearby; track $index) {
+            <tr>
+              <td>{{ shelter.name }}</td>
+              <td>{{ shelter.distanceKm | number:'1.1-1' }}</td>
+              <td>{{ shelter.isOpen ? 'Open' : 'Closed' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p>No nearby shelters found.</p>
+  }
+</section>

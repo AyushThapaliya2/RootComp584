@@ -1,0 +1,31 @@
+<section class="alerts">
+  <h1>Active Earthquake Alerts</h1>
+  @if (alerts.length > 0) {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Magnitude</th>
+            <th>Recorded At (UTC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (alert of alerts; track $index) {
+            <tr>
+              <td>{{ alert.id }}</td>
+              <td>{{ alert.latitude }}</td>
+              <td>{{ alert.longitude }}</td>
+              <td>{{ alert.magnitude }}</td>
+              <td>{{ alert.recordedAt }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p>No active alerts.</p>
+  }
+</section>

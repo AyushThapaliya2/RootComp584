@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .nav__bar {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(120deg, rgba(18, 18, 24, 0.92), rgba(44, 63, 96, 0.9));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 8px 18px;
+  }
+
+  .nav__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    .nav__title {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: mat.get-theme-color(mat.define-theme(), primary, 90);
+      text-transform: uppercase;
+    }
+  }
+
+  .nav__links {
+    display: inline-flex;
+    justify-content: center;
+    gap: 6px;
+
+    a {
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--mat-sys-on-primary);
+    }
+  }
+
+  .nav__auth {
+    display: inline-flex;
+    gap: 10px;
+  }
+}

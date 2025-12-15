@@ -1,0 +1,29 @@
+.shelters,
+.nearby {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-heavy);
+  backdrop-filter: blur(8px);
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.shelters h1,
+.nearby h2 {
+  margin: 0;
+}
+
+.coords {
+  justify-content: flex-start;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-strong);
+  padding: 10px 12px;
+  min-width: 160px;
+}

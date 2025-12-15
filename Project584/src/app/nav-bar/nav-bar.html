@@ -1,10 +1,25 @@
-<header>
-  <mat-toolbar color="primary">
-    <button mat-icon-button [routerLink]="['/']">
-      <mat-icon>home</mat-icon>
-    </button>
-    | <a mat-flat-button color="primary" [routerLink]="['/weather']">Weather</a> |
-    <a mat-flat-button color="primary" [routerLink]="['/city']">City</a> |
-    <a mat-flat-button color="primary" [routerLink]="['/country']">Country</a>
+<header class="nav">
+  <mat-toolbar color="primary" class="nav__bar">
+    <div class="nav__brand">
+      <button mat-icon-button [routerLink]="['/']" aria-label="Home">
+        <mat-icon>home</mat-icon>
+      </button>
+      <span class="nav__title">QuakeGuard</span>
+    </div>
+
+    <nav class="nav__links">
+      <a mat-button [routerLink]="['/forecast']">Forecast</a>
+      <a mat-button [routerLink]="['/earthquakes']">Earthquakes</a>
+      <a mat-button [routerLink]="['/alerts']">Active Alerts</a>
+      <a mat-button [routerLink]="['/shelters']">Shelters</a>
+    </nav>
+
+    <div class="nav__auth">
+      @if (auth.isLoggedInSignal()) {
+        <button mat-flat-button color="warn" (click)="logout()">Logout</button>
+      } @else {
+        <a mat-flat-button color="accent" [routerLink]="['/login']">Login</a>
+      }
+    </div>
   </mat-toolbar>
 </header>

@@ -1,12 +1,20 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
-import { Weather } from './weather/weather';
-import { City } from './city/city';
-import { Country } from './country/country';
+import { Forecast } from './forecast/forecast';
+import { Shelters } from './shelters/shelters';
+import { Earthquakes } from './earthquakes/earthquakes';
+import { Alerts } from './alerts/alerts';
+import { Login } from './auth/login';
+import { Register } from './auth/register';
+import { authGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-    { path: '', component: Home, pathMatch: 'full' },
-    { path: 'weather', component: Weather },
-    { path: 'city', component: City },
-    { path: 'country', component: Country }
+  { path: 'login', component: Login },
+  { path: 'register', component: Register },
+  { path: '', component: Home, canActivate: [authGuard], pathMatch: 'full' },
+  { path: 'forecast', component: Forecast, canActivate: [authGuard] },
+  { path: 'earthquakes', component: Earthquakes, canActivate: [authGuard] },
+  { path: 'alerts', component: Alerts, canActivate: [authGuard] },
+  { path: 'shelters', component: Shelters, canActivate: [authGuard] },
+  { path: '**', redirectTo: '' }
 ];

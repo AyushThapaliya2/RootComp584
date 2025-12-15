@@ -9,5 +9,5 @@ import { NavBar } from "./nav-bar/nav-bar";
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('Project584');
+  protected readonly title = signal('Earthquake Shelter Dashboard');
 }

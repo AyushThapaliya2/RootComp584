@@ -1,0 +1,29 @@
+<section class="earthquakes">
+  <h1>Recorded Earthquakes</h1>
+  @if (quakes.length > 0) {
+    <div class="table-wrap">
+      <table class="table table-striped">
+        <thead>
+          <td>ID</td>
+          <td>Latitude</td>
+          <td>Longitude</td>
+          <td>Magnitude</td>
+          <td>Recorded At (UTC)</td>
+        </thead>
+        <tbody>
+          @for (quake of quakes; track $index) {
+            <tr>
+              <td>{{ quake.id }}</td>
+              <td>{{ quake.latitude }}</td>
+              <td>{{ quake.longitude }}</td>
+              <td>{{ quake.magnitude }}</td>
+              <td>{{ quake.recordedAt }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <p>Loading earthquake data…</p>
+  }
+</section>

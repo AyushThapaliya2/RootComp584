@@ -1,0 +1,73 @@
+main.page-shell {
+  padding-top: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-heavy);
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-strong);
+}
+
+.coords {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.coords input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-strong);
+  padding: 10px 12px;
+  min-width: 160px;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  main.page-shell {
+    padding: 16px;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
+  }
+}

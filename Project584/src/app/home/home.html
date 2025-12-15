@@ -1,1 +1,22 @@
-<p>home works!</p>
+<section class="hero">
+  <h1>Earthquake Shelter Dashboard</h1>
+  <p>Monitor local seismic activity and find open shelters nearby.</p>
+  <div class="actions">
+    <a mat-flat-button color="primary" [routerLink]="['/alerts']">View Active Alerts</a>
+    <a mat-stroked-button color="primary" [routerLink]="['/shelters']">Find Shelters</a>
+    <a mat-stroked-button color="accent" [routerLink]="['/register']">Create Account</a>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <h3>Seismic Forecast</h3>
+    <p>5-day outlook for expected magnitudes in the area.</p>
+    <a [routerLink]="['/forecast']">View forecast</a>
+  </div>
+  <div class="card">
+    <h3>Earthquake Log</h3>
+    <p>Browse all recorded events in Los Angeles.</p>
+    <a [routerLink]="['/earthquakes']">See events</a>
+  </div>
+</section>
